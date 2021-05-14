@@ -1,0 +1,1 @@
+web: gunicorn nudirest.wsgi --log-file -

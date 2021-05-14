@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+
+  "name": "Nudinop",
+  "version": "0.0.7",
+  "description": "Visual adult content blocker. Extra: filter out banned words.",
+  "content_scripts": [{
+    "js": ["js/jquery.min.js", "js/jquery.getimagedata.js", "js/mutation-summary.js", "content.js"],
+    "matches": ["*://*/*"]
+  }],
+  "web_accessible_resources": [
+    "web-accessible-resources/model.bin"
+  ],
+  "permissions":[
+    "declarativeContent",
+    "https://obscure-citadel-79502.herokuapp.com/",
+    "storage"
+  ],
+  "content_security_policy": "script-src 'self' 'sha256-VT7kKcBJjE3WgJ0w9SWSuFr18wnfekb5BsxHK8CWFi0='; object-src 'self'",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_popup": "popup/index.html",
+    "default_icon": {
+      "16": "images/shield16.png",
+      "32": "images/shield32.png",
+      "48": "images/shield48.png",
+      "128": "images/shield128.png"
+    }
+  },
+  "icons": {
+    "16": "images/shield16.png",
+    "32": "images/shield32.png",
+    "48": "images/shield48.png",
+    "128": "images/shield128.png"
+  }
+}
